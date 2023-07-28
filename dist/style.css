@@ -1,0 +1,54 @@
+        body {
+            direction: rtl;
+            font-family: "Cairo", sans-serif;
+        }
+
+        .text-black-material-100 {
+            --tw-text-opacity: 1;
+            color: rgb(55 65 81 / var(--tw-text-opacity));
+        }
+
+        .text-black-material-80 {
+            --tw-text-opacity: 0.8;
+            color: rgb(55 65 81 / var(--tw-text-opacity));
+        }
+
+        .text-black-material-50 {
+            --tw-text-opacity: 0.5;
+            color: rgb(55 65 81 / var(--tw-text-opacity));
+        }
+
+        .text-black-material-30 {
+            --tw-text-opacity: 0.31;
+            color: rgb(55 65 81 / var(--tw-text-opacity));
+        }
+
+        .text-gradient-material {
+            background: linear-gradient(to right, #5367FF, #E553FF);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        .text-blue-material {
+            --tw-text-opacity: 1;
+            color: rgb(81 101 253 / var(--tw-text-opacity));
+        }
+
+        .bg-blue-material {
+            background-color: #5165FD;
+        }
+
+        .bg-gray-material {
+            background-color: #EEEEEE;
+        }
+
+
+
+        .text-xxs {
+            font-size: 0.6rem
+                /* 12px */
+            ;
+            line-height: 0.8rem
+                /* 16px */
+            ;
+        }

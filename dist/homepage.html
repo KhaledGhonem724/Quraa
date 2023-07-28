@@ -6,72 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="tailwind.js"></script>
+    <script src="nav.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo">
-    <style>
-        body {
-            direction: rtl;
-            font-family: "Cairo", sans-serif;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        .text-black-material-100 {
-            --tw-text-opacity: 1;
-            color: rgb(55 65 81 / var(--tw-text-opacity));
-        }
-
-        .text-black-material-80 {
-            --tw-text-opacity: 0.8;
-            color: rgb(55 65 81 / var(--tw-text-opacity));
-        }
-
-        .text-black-material-50 {
-            --tw-text-opacity: 0.5;
-            color: rgb(55 65 81 / var(--tw-text-opacity));
-        }
-
-        .text-black-material-30 {
-            --tw-text-opacity: 0.31;
-            color: rgb(55 65 81 / var(--tw-text-opacity));
-        }
-
-        .text-gradient-material {
-            background: linear-gradient(to right, #5367FF, #E553FF);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-        }
-
-        .text-blue-material {
-            --tw-text-opacity: 1;
-            color: rgb(81 101 253 / var(--tw-text-opacity));
-        }
-
-        .bg-blue-material {
-            background-color: #5165FD;
-        }
-
-        .bg-gray-material {
-            background-color: #EEEEEE;
-        }
-
-
-
-        .text-xxs {
-            font-size: 0.6rem
-                /* 12px */
-            ;
-            line-height: 0.8rem
-                /* 16px */
-            ;
-        }
-
-
-
-
-        @media (min-width: 1024px) {
-            .lg\:flex {
-                display: flex;
-            }
-        }
-    </style>
 </head>
 
 <body class="m-0 p-0">
@@ -83,13 +21,14 @@
                 </button>
             </div>
             <div id="SearchAndButton" class=" h-8 w-4/12  hidden md:flex justify-evenly ">
-                <button class=" w-1/3 bg-blue-material text-white text-sm px-0.5">
+                <button class=" w-1/3 bg-blue-material text-white text-sm px-0.5" onclick="color(SearchAndButton)">
                     تطوع معنا
                 </button>
                 <form action="" class="search w-6/12 flex p-2 bg-gray-material rounded-sm">
-                    <button id="searchicon" class="w-1/5 " onclick="">
-                        <img src="" alt="">
-                        <!-- navigate to search -->
+                    <button id="searchicon" class="w-1/5 flex justify-center items-center" onclick="">
+                        <a href="searchresult.html" class="flex justify-center items-center">
+                            <img src="assets/navbar/searchicon.png" alt="">
+                        </a>
                     </button>
                     <input type="text" name="searchbar" id="searchbar" value="بحث"
                         class=" w-4/5 p-2 rounded-l-sm text-black-material-100 bg-gray-material">
@@ -98,9 +37,11 @@
             </div>
             <div id="OptionsBar" class=" hidden md:h-8 md:justify-center md:flex md:w-4/12 ">
                 <ul class="w-10/12  md:flex md:justify-center md:items-center">
-                    <li class="md:mx-auto"><a href="">الرئيسية</a></li>
-                    <li class="md:mx-auto"><a href="">من نحن</a></li>
-                    <li class="md:mx-auto"><a href="">راسلنا</a></li>
+                    <li id="homepage" class="md:mx-auto">
+                        <a href="homepage.html" onclick="color(homepage)">الرئيسية</a>
+                    </li>
+                    <li id="aboutus" class="md:mx-auto"><a href="aboutus.html">من نحن</a></li>
+                    <li id="contactus" class="md:mx-auto"><a href="contactus.html">راسلنا</a></li>
                 </ul>
             </div>
             <div id="SiteLogo" class=" mx-2 flex justify-center w-1/5 md:w-1/12 ">
@@ -109,9 +50,9 @@
         </div>
         <div id="optionslist" class="z-10 p-4 bg-white flex-col justify-start md:hidden ">
             <ul class="h-32 flex flex-col justify-around ">
-                <li class="md:mx-auto "><a href="">الرئيسية</a></li>
-                <li class="md:mx-auto"><a href="">من نحن</a></li>
-                <li class="md:mx-auto"><a href="">راسلنا</a></li>
+                <li id="homepage" class="md:mx-auto"><a href="homepage.html">الرئيسية</a></li>
+                <li id="aboutus" class="md:mx-auto"><a href="aboutus.html">من نحن</a></li>
+                <li id="contactus" class="md:mx-auto"><a href="contactus.html">راسلنا</a></li>
             </ul>
             <button class=" w-5/12 my-8 bg-blue-material text-white text-sm p-1.5 rounded-sm">
                 تطوع معنا
@@ -119,10 +60,11 @@
         </div>
         <hr>
     </nav>
-    <div id="sugestions" class="flex flex-col mt-20 mb-12 justify-evenly md:flex-row-reverse p-3 px-9">
+    <div class="h-20"></div>
+    <div id="sugestions" class="flex flex-col  mb-12 justify-evenly md:flex-row-reverse p-3 px-9">
         <div id="singleImg" class="">
             <div id="card" class="m-2">
-                <img src="assets/article1.png" alt="">
+                <img src="assets/homepage/article1.png" alt="">
                 <div class="flex my-2 justify-between text-sm text-black-material-50">
                     <span>
                         2 فبراير . 5 دقائق قراءة
@@ -141,7 +83,7 @@
         <div class="hidden md:block h-auto bg-gray-200 shadow-sm" style="width: 0.1rem"></div>
         <div id="doubleImg" class=" md:w-1/4 flex md:flex-col  ">
             <div id="card" class="m-2  flex flex-col items-start">
-                <img src="assets/article2.png" alt="" class="">
+                <img src="assets/homepage/article2.png" alt="" class="">
                 <div class="w-full my-2 flex justify-between md:text-sm text-xxs text-black-material-50">
                     <span>
                         2 فبراير . 5 دقائق قراءة
@@ -157,7 +99,7 @@
                 </div>
             </div>
             <div id="card" class="m-2  flex flex-col items-start">
-                <img src="assets/article3.png" alt="" class="">
+                <img src="assets/homepage/article3.png" alt="" class="">
                 <div class="w-full my-2 flex justify-between md:text-sm text-xxs text-black-material-50">
                     <span>
                         2 فبراير . 5 دقائق قراءة
@@ -181,10 +123,10 @@
         </div>
         <div class="flex items-center ">
             <div class="w-1/12 hidden md:flex py-20 px-8">
-                <img src="assets/Arrow2.png" alt="" class="">
+                <img src="assets/homepage/Arrow2.png" alt="" class="">
             </div>
             <div class="flex w-full justify-evenly  my-6 overflow-x-scroll md:overflow-x-hidden ">
-                <span id="phi" class="flex  text-white font-bold w-44 h-24 mx-2 rounded-md" style="background-image: url(assets/c5history.png);  background-repeat: no-repeat;
+                <span id="phi" class="flex  text-white font-bold w-44 h-24 mx-2 rounded-md" style="background-image: url(assets/homepage/c5history.png);  background-repeat: no-repeat;
                         background-size: cover;">
                     <div class="flex items-center justify-center w-44 h-24  rounded-md "
                         style="background-color: rgb(0 0 0 / 0.5);">
@@ -192,28 +134,28 @@
                     </div>
 
                 </span>
-                <div id="phi" class="flex text-white font-bold w-44 h-24 mx-2 rounded-md " style="background-image: url(assets/c4literat.png);  background-repeat: no-repeat;
+                <div id="phi" class="flex text-white font-bold w-44 h-24 mx-2 rounded-md " style="background-image: url(assets/homepage/c4literat.png);  background-repeat: no-repeat;
                         background-size: cover;">
                     <div class="flex items-center justify-center w-44 h-24 rounded-md "
                         style="background-color: rgb(0 0 0 / 0.5);">
                         أدب
                     </div>
                 </div>
-                <span id="phi" class="flex text-white font-bold w-44 h-24 mx-2 rounded-md" style="background-image: url(assets/c3poem.png);  background-repeat: no-repeat;
+                <span id="phi" class="flex text-white font-bold w-44 h-24 mx-2 rounded-md" style="background-image: url(assets/homepage/c3poem.png);  background-repeat: no-repeat;
                         background-size: cover;">
                     <div class="flex items-center justify-center w-44 h-24  rounded-md "
                         style="background-color: rgb(0 0 0 / 0.5);">
                         شعر
                     </div>
                 </span>
-                <span id="phi" class="flex text-white font-bold w-44 h-24  rounded-md" style="background-image: url(assets/c2art.png);  background-repeat: no-repeat;
+                <span id="phi" class="flex text-white font-bold w-44 h-24  rounded-md" style="background-image: url(assets/homepage/c2art.png);  background-repeat: no-repeat;
                         background-size: cover;">
                     <div class="flex items-center justify-center w-44 h-24  rounded-md "
                         style="background-color: rgb(0 0 0 / 0.5);">
                         فنون
                     </div>
                 </span>
-                <span id="phi" class="flex text-white font-bold w-44 h-24 mx-2 rounded-md" style="background-image: url(assets/c1philosophy.png);  background-repeat: no-repeat;
+                <span id="phi" class="flex text-white font-bold w-44 h-24 mx-2 rounded-md" style="background-image: url(assets/homepage/c1philosophy.png);  background-repeat: no-repeat;
                         background-size: cover;">
                     <div class="flex items-center justify-center w-44 h-24  rounded-md "
                         style="background-color: rgb(0 0 0 / 0.5);">
@@ -222,7 +164,7 @@
                 </span>
             </div>
             <div class="w-1/12 hidden md:flex  py-20 px-8">
-                <img src="assets/Arrow1.png" alt="" class="">
+                <img src="assets/homepage/Arrow1.png" alt="" class="">
             </div>
         </div>
 
@@ -245,7 +187,7 @@
 
         <div class="flex flex-col ">
             <div class="flex justify-evenly my-3">
-                <img src="assets/article1.png" alt="" class="w-6/12 md:w-4/12">
+                <img src="assets/homepage/article1.png" alt="" class="w-6/12 md:w-4/12">
                 <div class="w-5/12 flex flex-col justify-around">
                     <div class="flex my-2 justify-start text-sm text-black-material-50">
                         <span>
@@ -276,7 +218,7 @@
                 </div>
             </div>
             <div class="flex justify-evenly my-3">
-                <img src="assets/article1.png" alt="" class="w-6/12 md:w-4/12">
+                <img src="assets/homepage/article4.png" alt="" class="w-6/12 md:w-4/12">
                 <div class="w-5/12 flex flex-col justify-around">
                     <div class="flex my-2 justify-start text-sm text-black-material-50">
                         <span>
@@ -326,15 +268,15 @@
         </div>
         <div class="flex justify-between mb-2">
             <div class=" hidden md:flex  px-8">
-                <img src="assets/Arrow2.png" alt="" class="">
+                <img src="assets/homepage/Arrow2.png" alt="" class="">
             </div>
             <div class=" hidden md:flex  px-8">
-                <img src="assets/Arrow1.png" alt="" class="">
+                <img src="assets/homepage/Arrow1.png" alt="" class="">
             </div>
         </div>
         <div class="flex justify-evenly">
             <div id="card" class="m-1">
-                <img src="assets/mr1.png" alt="">
+                <img src="assets/homepage/mr1.png" alt="">
                 <div class="flex my-2 justify-between text-sm text-black-material-50">
                     <span class="hidden md:block">
                         2 فبراير . 5 دقائق قراءة
@@ -350,7 +292,7 @@
                 </div>
             </div>
             <div id="card" class="m-1">
-                <img src="assets/mr2.png" alt="">
+                <img src="assets/homepage/mr2.png" alt="">
                 <div class="flex my-2 justify-between text-sm text-black-material-50">
                     <span class="hidden md:block">
                         2 فبراير . 5 دقائق قراءة
@@ -366,7 +308,7 @@
                 </div>
             </div>
             <div id="card" class="m-1">
-                <img src="assets/mr3.png" alt="">
+                <img src="assets/homepage/mr3.png" alt="">
                 <div class="flex my-2 justify-between text-sm text-black-material-50">
                     <span class="hidden md:block">
                         2 فبراير . 5 دقائق قراءة
@@ -410,18 +352,6 @@
         </div>
 
     </div>
-    <script>
-        let optionsHidden = false;
-        function showOptions() {
-            if (optionsHidden) {
-                document.getElementById("optionslist").style = "@media (min-width: 640px) { display: none; } ";
-            }
-            else {
-                document.getElementById("optionslist").style.display = "none";
-            }
-            optionsHidden = !optionsHidden;
-        } 
-    </script>
 </body>
 
 </html>
