@@ -52,3 +52,20 @@
                 /* 16px */
             ;
         }
+        .ad{
+            color: #5165FD;
+        }
+        .f{
+            color: #EED600
+        }
+        .ff{
+            color: 
+            #ED0287;
+        }
+        .line{
+			width: 61px;
+			border-radius: 1px;
+			transform: rotate(180deg);
+            color: #FECE2F;
+			
+		}
