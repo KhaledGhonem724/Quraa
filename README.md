@@ -1,2 +1,2 @@
 # RMZtech
-### the company website : [link](https://www.linkedin.com/company/rmztech/about/)
+### the company LinkedIn page : [link](https://www.linkedin.com/company/rmztech/about/)
